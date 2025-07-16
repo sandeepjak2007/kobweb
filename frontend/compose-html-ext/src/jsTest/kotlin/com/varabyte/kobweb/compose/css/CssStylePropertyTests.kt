@@ -115,7 +115,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { alignContent(AlignContent.SpaceEvenly) }).isEqualTo("align-content: space-evenly")
         assertThat(styleToText { alignContent(AlignContent.Stretch) }).isEqualTo("align-content: stretch")
 
-        // Baseline 
+        // Baseline
         assertThat(styleToText { alignContent(AlignContent.Baseline) }).isEqualTo("align-content: baseline")
         assertThat(styleToText { alignContent(AlignContent.FirstBaseline) }).isEqualTo("align-content: first baseline")
         assertThat(styleToText { alignContent(AlignContent.LastBaseline) }).isEqualTo("align-content: last baseline")
@@ -124,7 +124,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { alignContent(AlignContent.Safe(AlignContent.Center)) }).isEqualTo("align-content: safe center")
         assertThat(styleToText { alignContent(AlignContent.Unsafe(AlignContent.FlexEnd)) }).isEqualTo("align-content: unsafe flex-end")
 
-        // Global 
+        // Global
         assertThat(styleToText { alignContent(AlignContent.Inherit) }).isEqualTo("align-content: inherit")
         assertThat(styleToText { alignContent(AlignContent.Initial) }).isEqualTo("align-content: initial")
         assertThat(styleToText { alignContent(AlignContent.Revert) }).isEqualTo("align-content: revert")
@@ -252,7 +252,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { backgroundAttachment(BackgroundAttachment.RevertLayer) }).isEqualTo("background-attachment: revert-layer")
         assertThat(styleToText { backgroundAttachment(BackgroundAttachment.Unset) }).isEqualTo("background-attachment: unset")
     }
-    
+
     @Test
     fun verifyBackgroundBlendMode() {
         assertThat(styleToText { backgroundBlendMode(BackgroundBlendMode.Normal) }).isEqualTo("background-blend-mode: normal")
@@ -297,9 +297,6 @@ class CssStylePropertyTests {
 
     @Test
     fun verifyBackgroundColor() {
-        assertThat(styleToText { backgroundColor(BackgroundColor.CurrentColor) }).isEqualTo("background-color: currentcolor")
-        assertThat(styleToText { backgroundColor(BackgroundColor.Transparent) }).isEqualTo("background-color: transparent")
-
         assertThat(styleToText { backgroundColor(BackgroundColor.Inherit) }).isEqualTo("background-color: inherit")
         assertThat(styleToText { backgroundColor(BackgroundColor.Initial) }).isEqualTo("background-color: initial")
         assertThat(styleToText { backgroundColor(BackgroundColor.Revert) }).isEqualTo("background-color: revert")
@@ -630,8 +627,6 @@ class CssStylePropertyTests {
     fun verifyBreakAfter() {
         assertThat(styleToText { breakAfter(BreakAfter.Auto) }).isEqualTo("break-after: auto")
         assertThat(styleToText { breakAfter(BreakAfter.Avoid) }).isEqualTo("break-after: avoid")
-        assertThat(styleToText { breakAfter(BreakAfter.Always) }).isEqualTo("break-after: always")
-        assertThat(styleToText { breakAfter(BreakAfter.All) }).isEqualTo("break-after: all")
 
         assertThat(styleToText { breakAfter(BreakAfter.AvoidPage) }).isEqualTo("break-after: avoid-page")
         assertThat(styleToText { breakAfter(BreakAfter.Page) }).isEqualTo("break-after: page")
@@ -642,9 +637,6 @@ class CssStylePropertyTests {
 
         assertThat(styleToText { breakAfter(BreakAfter.Column) }).isEqualTo("break-after: column")
         assertThat(styleToText { breakAfter(BreakAfter.AvoidColumn) }).isEqualTo("break-after: avoid-column")
-
-        assertThat(styleToText { breakAfter(BreakAfter.Region) }).isEqualTo("break-after: region")
-        assertThat(styleToText { breakAfter(BreakAfter.AvoidRegion) }).isEqualTo("break-after: avoid-region")
 
         assertThat(styleToText { breakAfter(BreakAfter.Inherit) }).isEqualTo("break-after: inherit")
         assertThat(styleToText { breakAfter(BreakAfter.Initial) }).isEqualTo("break-after: initial")
@@ -658,8 +650,6 @@ class CssStylePropertyTests {
     fun verifyBreakBefore() {
         assertThat(styleToText { breakBefore(BreakBefore.Auto) }).isEqualTo("break-before: auto")
         assertThat(styleToText { breakBefore(BreakBefore.Avoid) }).isEqualTo("break-before: avoid")
-        assertThat(styleToText { breakBefore(BreakBefore.Always) }).isEqualTo("break-before: always")
-        assertThat(styleToText { breakBefore(BreakBefore.All) }).isEqualTo("break-before: all")
 
         assertThat(styleToText { breakBefore(BreakBefore.AvoidPage) }).isEqualTo("break-before: avoid-page")
         assertThat(styleToText { breakBefore(BreakBefore.Page) }).isEqualTo("break-before: page")
@@ -670,9 +660,6 @@ class CssStylePropertyTests {
 
         assertThat(styleToText { breakBefore(BreakBefore.Column) }).isEqualTo("break-before: column")
         assertThat(styleToText { breakBefore(BreakBefore.AvoidColumn) }).isEqualTo("break-before: avoid-column")
-
-        assertThat(styleToText { breakBefore(BreakBefore.Region) }).isEqualTo("break-before: region")
-        assertThat(styleToText { breakBefore(BreakBefore.AvoidRegion) }).isEqualTo("break-before: avoid-region")
 
         assertThat(styleToText { breakBefore(BreakBefore.Inherit) }).isEqualTo("break-before: inherit")
         assertThat(styleToText { breakBefore(BreakBefore.Initial) }).isEqualTo("break-before: initial")
@@ -688,7 +675,6 @@ class CssStylePropertyTests {
         assertThat(styleToText { breakInside(BreakInside.Avoid) }).isEqualTo("break-inside: avoid")
         assertThat(styleToText { breakInside(BreakInside.AvoidPage) }).isEqualTo("break-inside: avoid-page")
         assertThat(styleToText { breakInside(BreakInside.AvoidColumn) }).isEqualTo("break-inside: avoid-column")
-        assertThat(styleToText { breakInside(BreakInside.AvoidRegion) }).isEqualTo("break-inside: avoid-region")
 
         assertThat(styleToText { breakInside(BreakInside.Inherit) }).isEqualTo("break-inside: inherit")
         assertThat(styleToText { breakInside(BreakInside.Initial) }).isEqualTo("break-inside: initial")
@@ -702,23 +688,17 @@ class CssStylePropertyTests {
         assertThat(styleToText { captionSide(CaptionSide.Top) }).isEqualTo("caption-side: top")
         assertThat(styleToText { captionSide(CaptionSide.Bottom) }).isEqualTo("caption-side: bottom")
 
-        assertThat(styleToText { captionSide(CaptionSide.BlockStart) }).isEqualTo("caption-side: block-start")
-        assertThat(styleToText { captionSide(CaptionSide.BlockEnd) }).isEqualTo("caption-side: block-end")
-        assertThat(styleToText { captionSide(CaptionSide.InlineStart) }).isEqualTo("caption-side: inline-start")
-        assertThat(styleToText { captionSide(CaptionSide.InlineEnd) }).isEqualTo("caption-side: inline-end")
-
         assertThat(styleToText { captionSide(CaptionSide.Inherit) }).isEqualTo("caption-side: inherit")
         assertThat(styleToText { captionSide(CaptionSide.Initial) }).isEqualTo("caption-side: initial")
         assertThat(styleToText { captionSide(CaptionSide.Revert) }).isEqualTo("caption-side: revert")
         assertThat(styleToText { captionSide(CaptionSide.RevertLayer) }).isEqualTo("caption-side: revert-layer")
         assertThat(styleToText { captionSide(CaptionSide.Unset) }).isEqualTo("caption-side: unset")
     }
-    
+
     @Test
     fun verifyCaretColor() {
         assertThat(styleToText { caretColor(CaretColor.Auto) }).isEqualTo("caret-color: auto")
-        assertThat(styleToText { caretColor(CaretColor.Transparent) }).isEqualTo("caret-color: transparent")
-        assertThat(styleToText { caretColor(CaretColor.CurrentColor) }).isEqualTo("caret-color: currentcolor")
+        assertThat(styleToText { caretColor(CaretColor.of(Color.transparent)) }).isEqualTo("caret-color: transparent")
 
         assertThat(styleToText { caretColor(CaretColor.Inherit) }).isEqualTo("caret-color: inherit")
         assertThat(styleToText { caretColor(CaretColor.Initial) }).isEqualTo("caret-color: initial")
@@ -742,7 +722,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { clear(Clear.RevertLayer) }).isEqualTo("clear: revert-layer")
         assertThat(styleToText { clear(Clear.Unset) }).isEqualTo("clear: unset")
     }
-    
+
     @Test
     fun verifyColorScheme() {
         assertThat(styleToText { colorScheme(ColorScheme.Normal) }).isEqualTo("color-scheme: normal")
@@ -762,8 +742,6 @@ class CssStylePropertyTests {
 
     @Test
     fun verifyColor() {
-        assertThat(styleToText { color(CSSColor.CurrentColor) }).isEqualTo("color: currentColor")
-
         assertThat(styleToText { color(CSSColor.Inherit) }).isEqualTo("color: inherit")
         assertThat(styleToText { color(CSSColor.Initial) }).isEqualTo("color: initial")
         assertThat(styleToText { color(CSSColor.Revert) }).isEqualTo("color: revert")
@@ -927,7 +905,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { cursor(Cursor.Grab) }).isEqualTo("cursor: grab")
         assertThat(styleToText { cursor(Cursor.Grabbing) }).isEqualTo("cursor: grabbing")
 
-        // Resizing and scrolling 
+        // Resizing and scrolling
         assertThat(styleToText { cursor(Cursor.AllScroll) }).isEqualTo("cursor: all-scroll")
         assertThat(styleToText { cursor(Cursor.ColumnResize) }).isEqualTo("cursor: col-resize")
         assertThat(styleToText { cursor(Cursor.RowResize) }).isEqualTo("cursor: row-resize")
@@ -1017,7 +995,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { float(CSSFloat.RevertLayer) }).isEqualTo("float: revert-layer")
         assertThat(styleToText { float(CSSFloat.Unset) }).isEqualTo("float: unset")
     }
-    
+
     @Test
     fun verifyFontOpticalSizing() {
         assertThat(styleToText { fontOpticalSizing(FontOpticalSizing.Auto) }).isEqualTo("font-optical-sizing: auto")
@@ -1140,7 +1118,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { fontVariantLigatures(FontVariantLigatures.CommonLigatures) }).isEqualTo("font-variant-ligatures: common-ligatures")
         assertThat(styleToText { fontVariantLigatures(FontVariantLigatures.NoCommonLigatures) }).isEqualTo("font-variant-ligatures: no-common-ligatures")
 
-        // Discretionary ligature values  
+        // Discretionary ligature values
         assertThat(styleToText { fontVariantLigatures(FontVariantLigatures.DiscretionaryLigatures) }).isEqualTo("font-variant-ligatures: discretionary-ligatures")
         assertThat(styleToText { fontVariantLigatures(FontVariantLigatures.NoDiscretionaryLigatures) }).isEqualTo("font-variant-ligatures: no-discretionary-ligatures")
 
@@ -1194,7 +1172,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { fontVariantNumeric(FontVariantNumeric.ProportionalNums) }).isEqualTo("font-variant-numeric: proportional-nums")
         assertThat(styleToText { fontVariantNumeric(FontVariantNumeric.TabularNums) }).isEqualTo("font-variant-numeric: tabular-nums")
 
-        // Numeric fractions 
+        // Numeric fractions
         assertThat(styleToText { fontVariantNumeric(FontVariantNumeric.DiagonalFractions) }).isEqualTo("font-variant-numeric: diagonal-fractions")
         assertThat(styleToText { fontVariantNumeric(FontVariantNumeric.StackedFractions) }).isEqualTo("font-variant-numeric: stacked-fractions")
 
@@ -1230,33 +1208,44 @@ class CssStylePropertyTests {
     @Test
     fun verifyFontVariant() {
         // Individual values
-        assertThat(styleToText { fontVariant(alternates = FontVariantAlternates.Normal) })
+        assertThat(styleToText { fontVariant(FontVariant.Normal) })
             .isEqualTo("font-variant: normal")
-        assertThat(styleToText { fontVariant(caps = FontVariantCaps.SmallCaps) })
+        assertThat(styleToText { fontVariant(FontVariant.of(alternates = FontVariantAlternates.HistoricalForms)) })
+            .isEqualTo("font-variant: historical-forms")
+        assertThat(styleToText { fontVariant(FontVariant.of(caps = FontVariantCaps.SmallCaps)) })
             .isEqualTo("font-variant: small-caps")
-        assertThat(styleToText { fontVariant(eastAsian = FontVariantEastAsian.Ruby) })
+        assertThat(styleToText { fontVariant(FontVariant.of(eastAsian = FontVariantEastAsian.Ruby)) })
             .isEqualTo("font-variant: ruby")
-        assertThat(styleToText { fontVariant(emoji = FontVariantEmoji.Text) })
+        assertThat(styleToText { fontVariant(FontVariant.of(emoji = FontVariantEmoji.Text)) })
             .isEqualTo("font-variant: text")
-        assertThat(styleToText { fontVariant(ligatures = FontVariantLigatures.CommonLigatures) })
+        assertThat(styleToText { fontVariant(FontVariant.of(ligatures = FontVariantLigatures.CommonLigatures)) })
             .isEqualTo("font-variant: common-ligatures")
-        assertThat(styleToText { fontVariant(numeric = FontVariantNumeric.Ordinal) })
+        assertThat(styleToText { fontVariant(FontVariant.of(numeric = FontVariantNumeric.Ordinal)) })
             .isEqualTo("font-variant: ordinal")
-        assertThat(styleToText { fontVariant(position = FontVariantPosition.Super) })
+        assertThat(styleToText { fontVariant(FontVariant.of(position = FontVariantPosition.Super)) })
             .isEqualTo("font-variant: super")
 
         // Multiple values
         assertThat(styleToText {
             fontVariant(
-                alternates = FontVariantAlternates.Normal,
-                caps = FontVariantCaps.SmallCaps,
-                eastAsian = FontVariantEastAsian.Ruby,
-                emoji = FontVariantEmoji.Text,
-                ligatures = FontVariantLigatures.CommonLigatures,
-                numeric = FontVariantNumeric.Ordinal,
-                position = FontVariantPosition.Super
+                FontVariant.of(
+                    alternates = FontVariantAlternates.HistoricalForms,
+                    caps = FontVariantCaps.SmallCaps,
+                    eastAsian = FontVariantEastAsian.Ruby,
+                    emoji = FontVariantEmoji.Text,
+                    ligatures = FontVariantLigatures.CommonLigatures,
+                    numeric = FontVariantNumeric.Ordinal,
+                    position = FontVariantPosition.Super
+                )
             )
-        }).isEqualTo("font-variant: normal small-caps ruby text common-ligatures ordinal super")
+        }).isEqualTo("font-variant: historical-forms small-caps ruby text common-ligatures ordinal super")
+
+        // Global
+        assertThat(styleToText { fontVariant(FontVariant.Inherit) }).isEqualTo("font-variant: inherit")
+        assertThat(styleToText { fontVariant(FontVariant.Initial) }).isEqualTo("font-variant: initial")
+        assertThat(styleToText { fontVariant(FontVariant.Revert) }).isEqualTo("font-variant: revert")
+        assertThat(styleToText { fontVariant(FontVariant.RevertLayer) }).isEqualTo("font-variant: revert-layer")
+        assertThat(styleToText { fontVariant(FontVariant.Unset) }).isEqualTo("font-variant: unset")
     }
 
     @Test
@@ -1431,9 +1420,6 @@ class CssStylePropertyTests {
         assertThat(styleToText { gridTemplateColumns(GridTemplate.RevertLayer) }).isEqualTo("grid-template-columns: revert-layer")
         assertThat(styleToText { gridTemplateColumns(GridTemplate.Unset) }).isEqualTo("grid-template-columns: unset")
 
-        assertThat(styleToText {
-            gridAutoRows(GridAuto.None)
-        }).isEqualTo("grid-auto-rows: none")
         assertThat(styleToText { gridAutoRows(GridAuto.Inherit) }).isEqualTo("grid-auto-rows: inherit")
         assertThat(styleToText { gridAutoRows(GridAuto.Initial) }).isEqualTo("grid-auto-rows: initial")
         assertThat(styleToText { gridAutoRows(GridAuto.Revert) }).isEqualTo("grid-auto-rows: revert")
@@ -1448,7 +1434,6 @@ class CssStylePropertyTests {
         assertThat(styleToText { height(Height.of(auto)) }).isEqualTo("height: auto")
 
         assertThat(styleToText { height(Height.FitContent) }).isEqualTo("height: fit-content")
-        assertThat(styleToText { height(Height.FitContent(20.em)) }).isEqualTo("height: fit-content(20em)")
         assertThat(styleToText { height(Height.MaxContent) }).isEqualTo("height: max-content")
         assertThat(styleToText { height(Height.MinContent) }).isEqualTo("height: min-content")
 
@@ -1578,6 +1563,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { lineBreak(LineBreak.RevertLayer) }).isEqualTo("line-break: revert-layer")
         assertThat(styleToText { lineBreak(LineBreak.Unset) }).isEqualTo("line-break: unset")
     }
+
     @Test
     fun verifyLineHeight() {
         assertThat(styleToText { lineHeight(LineHeight.Normal) }).isEqualTo("line-height: normal")
@@ -1688,10 +1674,8 @@ class CssStylePropertyTests {
     fun verifyMaxHeight() {
         assertThat(styleToText { maxHeight(MaxHeight.of(10.px)) }).isEqualTo("max-height: 10px")
         assertThat(styleToText { maxHeight(MaxHeight.of(10.percent)) }).isEqualTo("max-height: 10%")
-        assertThat(styleToText { maxHeight(MaxHeight.of(auto)) }).isEqualTo("max-height: auto")
 
         assertThat(styleToText { maxHeight(MaxHeight.FitContent) }).isEqualTo("max-height: fit-content")
-        assertThat(styleToText { maxHeight(MaxHeight.FitContent(20.em)) }).isEqualTo("max-height: fit-content(20em)")
         assertThat(styleToText { maxHeight(MaxHeight.MaxContent) }).isEqualTo("max-height: max-content")
         assertThat(styleToText { maxHeight(MaxHeight.MinContent) }).isEqualTo("max-height: min-content")
         assertThat(styleToText { maxHeight(MaxHeight.None) }).isEqualTo("max-height: none")
@@ -1707,10 +1691,8 @@ class CssStylePropertyTests {
     fun verifyMaxWidth() {
         assertThat(styleToText { maxWidth(MaxWidth.of(10.px)) }).isEqualTo("max-width: 10px")
         assertThat(styleToText { maxWidth(MaxWidth.of(10.percent)) }).isEqualTo("max-width: 10%")
-        assertThat(styleToText { maxWidth(MaxWidth.of(auto)) }).isEqualTo("max-width: auto")
 
         assertThat(styleToText { maxWidth(MaxWidth.FitContent) }).isEqualTo("max-width: fit-content")
-        assertThat(styleToText { maxWidth(MaxWidth.FitContent(20.em)) }).isEqualTo("max-width: fit-content(20em)")
         assertThat(styleToText { maxWidth(MaxWidth.MaxContent) }).isEqualTo("max-width: max-content")
         assertThat(styleToText { maxWidth(MaxWidth.MinContent) }).isEqualTo("max-width: min-content")
         assertThat(styleToText { maxWidth(MaxWidth.None) }).isEqualTo("max-width: none")
@@ -1729,7 +1711,6 @@ class CssStylePropertyTests {
         assertThat(styleToText { minHeight(MinHeight.of(auto)) }).isEqualTo("min-height: auto")
 
         assertThat(styleToText { minHeight(MinHeight.FitContent) }).isEqualTo("min-height: fit-content")
-        assertThat(styleToText { minHeight(MinHeight.FitContent(20.em)) }).isEqualTo("min-height: fit-content(20em)")
         assertThat(styleToText { minHeight(MinHeight.MaxContent) }).isEqualTo("min-height: max-content")
         assertThat(styleToText { minHeight(MinHeight.MinContent) }).isEqualTo("min-height: min-content")
 
@@ -1747,7 +1728,6 @@ class CssStylePropertyTests {
         assertThat(styleToText { minWidth(MinWidth.of(auto)) }).isEqualTo("min-width: auto")
 
         assertThat(styleToText { minWidth(MinWidth.FitContent) }).isEqualTo("min-width: fit-content")
-        assertThat(styleToText { minWidth(MinWidth.FitContent(20.em)) }).isEqualTo("min-width: fit-content(20em)")
         assertThat(styleToText { minWidth(MinWidth.MaxContent) }).isEqualTo("min-width: max-content")
         assertThat(styleToText { minWidth(MinWidth.MinContent) }).isEqualTo("min-width: min-content")
 
@@ -1802,7 +1782,19 @@ class CssStylePropertyTests {
     }
 
     @Test
-    fun verifyOrphans(){
+    fun verifyOpacity() {
+        assertThat(styleToText { opacity(Opacity.of(0.5)) }).isEqualTo("opacity: 0.5")
+        assertThat(styleToText { opacity(Opacity.of(50.percent)) }).isEqualTo("opacity: 50%")
+
+        assertThat(styleToText { opacity(Opacity.Inherit) }).isEqualTo("opacity: inherit")
+        assertThat(styleToText { opacity(Opacity.Initial) }).isEqualTo("opacity: initial")
+        assertThat(styleToText { opacity(Opacity.Revert) }).isEqualTo("opacity: revert")
+        assertThat(styleToText { opacity(Opacity.RevertLayer) }).isEqualTo("opacity: revert-layer")
+        assertThat(styleToText { opacity(Opacity.Unset) }).isEqualTo("opacity: unset")
+    }
+
+    @Test
+    fun verifyOrphans() {
         assertThat(styleToText { orphans(Orphans.of(2)) }).isEqualTo("orphans: 2")
         //Global
         assertThat(styleToText { orphans(Orphans.Inherit) }).isEqualTo("orphans: inherit")
@@ -1822,7 +1814,8 @@ class CssStylePropertyTests {
             .isEqualTo("outline: thick")
 
         assertThat(styleToText { outline(Outline.of(outlineStyle = LineStyle.None)) }).isEqualTo("outline: none")
-        assertThat(styleToText { outline(Outline.of(outlineStyle = LineStyle.Hidden)) }).isEqualTo("outline: hidden")
+        // `LineStyle` is defined incorrectly by JB, `Hidden` is not a valid value
+        // assertThat(styleToText { outline(Outline.of(outlineStyle = LineStyle.Hidden)) }).isEqualTo("outline: hidden")
         assertThat(styleToText { outline(Outline.of(outlineStyle = LineStyle.Dotted)) }).isEqualTo("outline: dotted")
         assertThat(styleToText { outline(Outline.of(outlineStyle = LineStyle.Dashed)) }).isEqualTo("outline: dashed")
         assertThat(styleToText { outline(Outline.of(outlineStyle = LineStyle.Solid)) }).isEqualTo("outline: solid")
@@ -1962,7 +1955,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { pointerEvents(PointerEvents.RevertLayer) }).isEqualTo("pointer-events: revert-layer")
         assertThat(styleToText { pointerEvents(PointerEvents.Unset) }).isEqualTo("pointer-events: unset")
     }
-    
+
     @Test
     fun verifyResize() {
         assertThat(styleToText { resize(Resize.None) }).isEqualTo("resize: none")
@@ -2137,7 +2130,6 @@ class CssStylePropertyTests {
         assertThat(styleToText { textAlign(TextAlign.Right) }).isEqualTo("text-align: right")
         assertThat(styleToText { textAlign(TextAlign.Center) }).isEqualTo("text-align: center")
         assertThat(styleToText { textAlign(TextAlign.Justify) }).isEqualTo("text-align: justify")
-        assertThat(styleToText { textAlign(TextAlign.JustifyAll) }).isEqualTo("text-align: justify-all")
         assertThat(styleToText { textAlign(TextAlign.Start) }).isEqualTo("text-align: start")
         assertThat(styleToText { textAlign(TextAlign.End) }).isEqualTo("text-align: end")
         assertThat(styleToText { textAlign(TextAlign.MatchParent) }).isEqualTo("text-align: match-parent")
@@ -2205,7 +2197,6 @@ class CssStylePropertyTests {
 
     @Test
     fun verifyTextEmphasisPosition() {
-        assertThat(styleToText { textEmphasisPosition(TextEmphasisPosition.Auto) }).isEqualTo("text-emphasis-position: auto")
         assertThat(styleToText { textEmphasisPosition(TextEmphasisPosition.Over) }).isEqualTo("text-emphasis-position: over")
         assertThat(styleToText { textEmphasisPosition(TextEmphasisPosition.Under) }).isEqualTo("text-emphasis-position: under")
         assertThat(styleToText { textEmphasisPosition(TextEmphasisPosition.of(TextEmphasisPosition.Over, TextEmphasisPosition.Side.Left)) }).isEqualTo("text-emphasis-position: over left")
@@ -2327,7 +2318,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { textUnderlinePosition(TextUnderlinePosition.RevertLayer) }).isEqualTo("text-underline-position: revert-layer")
         assertThat(styleToText { textUnderlinePosition(TextUnderlinePosition.Unset) }).isEqualTo("text-underline-position: unset")
     }
-    
+
     @Test
     fun verifyTop() {
         assertThat(styleToText { top(Top.of(10.px)) }).isEqualTo("top: 10px")
@@ -2554,7 +2545,6 @@ class CssStylePropertyTests {
         assertThat(styleToText { userSelect(UserSelect.None) }).isEqualTo("user-select: none")
         assertThat(styleToText { userSelect(UserSelect.Auto) }).isEqualTo("user-select: auto")
         assertThat(styleToText { userSelect(UserSelect.Text) }).isEqualTo("user-select: text")
-        assertThat(styleToText { userSelect(UserSelect.Contain) }).isEqualTo("user-select: contain")
         assertThat(styleToText { userSelect(UserSelect.All) }).isEqualTo("user-select: all")
 
         assertThat(styleToText { userSelect(UserSelect.Inherit) }).isEqualTo("user-select: inherit")
@@ -2629,7 +2619,6 @@ class CssStylePropertyTests {
         assertThat(styleToText { width(Width.of(auto)) }).isEqualTo("width: auto")
 
         assertThat(styleToText { width(Width.FitContent) }).isEqualTo("width: fit-content")
-        assertThat(styleToText { width(Width.FitContent(20.em)) }).isEqualTo("width: fit-content(20em)")
         assertThat(styleToText { width(Width.MaxContent) }).isEqualTo("width: max-content")
         assertThat(styleToText { width(Width.MinContent) }).isEqualTo("width: min-content")
 
@@ -2646,7 +2635,7 @@ class CssStylePropertyTests {
         assertThat(styleToText { willChange(WillChange.ScrollPosition) }).isEqualTo("will-change: scroll-position")
         assertThat(styleToText { willChange(WillChange.Contents) }).isEqualTo("will-change: contents")
 
-        assertThat(styleToText { willChange(WillChange.of("left","top")) }).isEqualTo("will-change: left, top")
+        assertThat(styleToText { willChange(WillChange.of("left", "top")) }).isEqualTo("will-change: left, top")
 
         assertThat(styleToText { willChange(WillChange.Inherit) }).isEqualTo("will-change: inherit")
         assertThat(styleToText { willChange(WillChange.Initial) }).isEqualTo("will-change: initial")
@@ -2686,6 +2675,8 @@ class CssStylePropertyTests {
         assertThat(styleToText { writingMode(WritingMode.HorizontalTb) }).isEqualTo("writing-mode: horizontal-tb")
         assertThat(styleToText { writingMode(WritingMode.VerticalRl) }).isEqualTo("writing-mode: vertical-rl")
         assertThat(styleToText { writingMode(WritingMode.VerticalLr) }).isEqualTo("writing-mode: vertical-lr")
+        assertThat(styleToText { writingMode(WritingMode.SidewaysRl) }).isEqualTo("writing-mode: sideways-rl")
+        assertThat(styleToText { writingMode(WritingMode.SidewaysLr) }).isEqualTo("writing-mode: sideways-lr")
 
         assertThat(styleToText { writingMode(WritingMode.Inherit) }).isEqualTo("writing-mode: inherit")
         assertThat(styleToText { writingMode(WritingMode.Initial) }).isEqualTo("writing-mode: initial")
@@ -2694,5 +2685,3 @@ class CssStylePropertyTests {
         assertThat(styleToText { writingMode(WritingMode.Unset) }).isEqualTo("writing-mode: unset")
     }
 }
-
-

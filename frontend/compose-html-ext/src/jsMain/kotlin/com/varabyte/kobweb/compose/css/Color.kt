@@ -48,14 +48,19 @@ fun StyleScope.colorScheme(colorScheme: ColorScheme) {
 sealed interface CSSColor : StylePropertyValue {
     companion object : CssGlobalValues<CSSColor> {
         // Keywords
+        @Deprecated(
+            "We are removing duplicate values.",
+            ReplaceWith("Color.currentColor", "org.jetbrains.compose.web.css.Color")
+        )
         val CurrentColor get() = "currentColor".unsafeCast<CSSColor>()
     }
 }
 
 fun StyleScope.color(color: CSSColor) {
-    color(color.toString())
+    property("color", color)
 }
 
+@Deprecated("We are moving away from stingly-typed values. Use `CSSColor`, `org.jetbrains.compose.web.css.Color`, or `com.varabyte.kobweb.compose.ui.graphics.Colors` instead.")
 fun StyleScope.color(value: String) {
     property("color", value)
 }
@@ -114,4 +119,15 @@ sealed class ColorInterpolationMethod private constructor(private val value: Str
         fun of(space: PolarColorSpace, hueInterpolationMethod: HueInterpolationMethod? = null) =
             space.withHue(hueInterpolationMethod)
     }
+}
+
+sealed interface Opacity : StylePropertyValue {
+    companion object : CssGlobalValues<Opacity> {
+        fun of(value: Number): Opacity = value.unsafeCast<Opacity>()
+        fun of(value: CSSPercentageNumericValue): Opacity = value.unsafeCast<Opacity>()
+    }
+}
+
+fun StyleScope.opacity(value: Opacity) {
+    property("opacity", value)
 }
